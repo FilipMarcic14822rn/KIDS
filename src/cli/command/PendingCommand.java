@@ -1,0 +1,26 @@
+package cli.command;
+
+import app.AppConfig;
+import app.ServentInfo;
+
+import java.util.List;
+
+public class PendingCommand implements CLICommand{
+
+    @Override
+    public String commandName() {return "pending";}
+
+    @Override
+    public void execute(String args) {
+        try {
+            List<Integer> requests = AppConfig.chordState.getPendingRequests();
+            if (requests != null)
+                AppConfig.timestampedStandardPrint("Pending follow requests:\n" + requests);
+            else
+                AppConfig.timestampedStandardPrint("No pending requests for: " + args);
+        }catch (Exception e){
+            //TODO exception i funkcija
+            AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+        }
+    }
+}

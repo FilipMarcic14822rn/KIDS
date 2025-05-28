@@ -1,0 +1,9 @@
+pause 50000
+dht_put 2 5
+pause 10000
+pause 10000
+pause 10000
+pause 10000
+pause 10000
+pause 10000
+pause 10000
