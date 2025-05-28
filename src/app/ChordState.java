@@ -60,7 +60,7 @@ public class ChordState {
 	private Map<Integer, List<ChordImage>> valueMap;
 	private Map<Integer, Map<Integer,List<ChordImage>>> backupMap;
 	private Map<Integer, List<Integer>> followerMap;
-	private Map<Integer, List<Integer>> pendingMap;
+	private Map<Integer, List<String>> pendingMap;
 
 	public ChordState() {
 		this.chordLevel = 1;
@@ -307,7 +307,7 @@ public class ChordState {
 				newList.add(serventInfo);
 			}
 		}
-		
+
 		allNodeInfo.clear();
 		allNodeInfo.addAll(newList);
 		allNodeInfo.addAll(newList2);
@@ -354,27 +354,38 @@ public class ChordState {
 	}
 
 	public boolean acceptFollowRequest(String args) {
-		if (!pendingMap.get(AppConfig.myServentInfo.getChordId()).contains(chordHash(args)))
+		if (!pendingMap.get(AppConfig.myServentInfo.getChordId()).contains(args))
 			return false;
 
-		pendingMap.get(AppConfig.myServentInfo.getChordId()).remove(chordHash(args));
+		pendingMap.get(AppConfig.myServentInfo.getChordId()).remove(args);
 		followerMap.get(AppConfig.myServentInfo.getChordId()).add(chordHash(args));
 		return true;
 	}
 
-	public boolean sendFollowRequest(String args) {
-		if (allNodeInfo.stream().anyMatch(o -> o.getChordId() == chordHash(args))){
-			if (pendingMap.get(chordHash(args)).contains(AppConfig.myServentInfo.getChordId()))
-				return false;
-			else {
-				pendingMap.get(chordHash(args)).add(AppConfig.myServentInfo.getChordId());
-				return true;
-			}
+	public boolean sendFollowRequest(String destination, String origin) throws Exception {
+		int key = chordHash(destination);
+		if (isKeyMine(key)) {
+				if(pendingMap.containsKey(key)) {
+					if (pendingMap.get(key).contains(origin))
+						return false;
+					else {
+						pendingMap.get(key).add(origin);
+						return true;
+					}
+				} else{
+					pendingMap.put(key, new ArrayList<>());
+					pendingMap.get(key).add(origin);
+					return true;
+				}
 		}
-		return false;
+
+		ServentInfo nextNode = getNextNodeForKey(key);
+		MessageUtil.sendMessage(new FollowRequestMessage(AppConfig.myServentInfo.getListenerPort(), nextNode.getListenerPort(), destination, origin));
+
+		throw new Exception("Please wait");
 	}
 
-	public List<Integer> getPendingRequests() {
+	public List<String> getPendingRequests() {
 		return pendingMap.get(AppConfig.myServentInfo.getChordId());
 	}
 
@@ -407,7 +418,7 @@ public class ChordState {
 		return followerMap;
 	}
 
-	public Map<Integer, List<Integer>> getPendingMap() {
+	public Map<Integer, List<String>> getPendingMap() {
 		return pendingMap;
 	}
 

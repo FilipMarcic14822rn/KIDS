@@ -1,3 +1,21 @@
-22:49:11 - Invalid FOLLOW: localhost:1200. Should be key, which is an int.
-22:49:21 - Invalid FOLLOW: localhost:1600. Should be key, which is an int.
-22:49:51 - VISIBILITYprivate. Should be key, which is an int.
+01:03:14 - Follow command exception: Please wait for args: localhost:1200
+01:03:24 - Follow command exception: Please wait for args: localhost:1600
+01:03:54 - List files command exception: Please wait for args: localhost:1600
+Exception in thread "Thread-2" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at app.ChordState.updateSuccessorTable(ChordState.java:233)
+	at app.ChordState.addNodes(ChordState.java:320)
+	at app.ChordState.removeNode(ChordState.java:435)
+	at app.ActivityMonitor.run(ActivityMonitor.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+Exception in thread "Thread-3" java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "java.util.Collection.toArray()" because "c" is null
+	at app.BackupCleaner.run(BackupCleaner.java:26)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Collection.toArray()" because "c" is null
+	at java.base/java.util.ArrayList.addAll(ArrayList.java:753)
+	at app.BackupCleaner.run(BackupCleaner.java:24)
+	... 1 more

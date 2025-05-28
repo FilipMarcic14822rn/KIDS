@@ -21,7 +21,6 @@ public class PauseCommand implements CLICommand {
 				throw new NumberFormatException();
 			}
 
-			AppConfig.timestampedStandardPrint("Pausing for " + timeToSleep + " ms");
 			try {
 				Thread.sleep(timeToSleep);
 			} catch (InterruptedException e) {

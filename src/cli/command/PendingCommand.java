@@ -13,14 +13,14 @@ public class PendingCommand implements CLICommand{
     @Override
     public void execute(String args) {
         try {
-            List<Integer> requests = AppConfig.chordState.getPendingRequests();
+            List<String> requests = AppConfig.chordState.getPendingRequests();
             if (requests != null)
                 AppConfig.timestampedStandardPrint("Pending follow requests:\n" + requests);
             else
                 AppConfig.timestampedStandardPrint("No pending requests for: " + args);
         }catch (Exception e){
             //TODO exception i funkcija
-            AppConfig.timestampedErrorPrint("Invalid argument PENDING: " + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("Pending command exception: " + e.getMessage() + " for args: " + args);
         }
     }
 }

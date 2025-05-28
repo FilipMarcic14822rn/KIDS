@@ -16,7 +16,7 @@ public class VisibilityCommand implements CLICommand{
                 AppConfig.timestampedStandardPrint("Files are already " + args);
         }catch (Exception e){
             //TODO sredi
-            AppConfig.timestampedErrorPrint("VISIBILITY" + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("Visibility command exception: " + e.getMessage() + " for args: " + args);
         }
 
     }

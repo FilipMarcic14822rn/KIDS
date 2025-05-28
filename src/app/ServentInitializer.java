@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import servent.message.NewNodeMessage;
@@ -49,6 +51,11 @@ public class ServentInitializer implements Runnable {
 		} else { //bootstrap gave us something else - let that node tell our successor that we are here
 			NewNodeMessage nnm = new NewNodeMessage(AppConfig.myServentInfo.getListenerPort(), someServentPort);
 			MessageUtil.sendMessage(nnm);
+
+			AppConfig.chordState.getBackupMap().put(AppConfig.myServentInfo.getChordId(), new HashMap<>());
+			AppConfig.chordState.getFollowerMap().put(AppConfig.myServentInfo.getChordId(), new ArrayList<>());
+			AppConfig.chordState.getPendingMap().put(AppConfig.myServentInfo.getChordId(), new ArrayList<>());
+			AppConfig.chordState.getValueMap().put(AppConfig.myServentInfo.getChordId(), new ArrayList<>());
 		}
 	}
 

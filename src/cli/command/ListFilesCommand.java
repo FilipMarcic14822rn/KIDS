@@ -22,7 +22,7 @@ public class ListFilesCommand implements CLICommand {
 //		} catch (NumberFormatException e) {
 //			AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
 		} catch (Exception e) {
-			AppConfig.timestampedStandardPrint("Please wait...");
+			AppConfig.timestampedErrorPrint("List files command exception: " + e.getMessage() + " for args: " + args);
 		}
 	}
 

@@ -15,7 +15,7 @@ public class ActivityMonitor implements Runnable {
             if(successor != null){
                 MessageUtil.sendMessage(new PingMessage(me.getListenerPort(),
                         successor.getListenerPort(), "ping"));
-                System.out.println(Thread.currentThread().getName());
+
                 try {Thread.sleep(AppConfig.myServentInfo.getSoftLimit());}
                 catch (InterruptedException e) {throw new RuntimeException(e);}
 

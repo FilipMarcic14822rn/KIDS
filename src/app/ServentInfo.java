@@ -30,6 +30,7 @@ public class ServentInfo implements Serializable {
 		this.ipAddress = ipAddress;
 		this.listenerPort = listenerPort;
 		this.chordId = ChordState.chordHash(ipAddress + ":" + listenerPort);
+		this.visibility = "public";
 		this.softLimit = softLimit;
 		this.hardLimit = hardLimit;
 	}
