@@ -99,6 +99,9 @@ public class SimpleServentListener implements Runnable, Cancellable {
 					case WARNING:
 						messageHandler = new WarningHandler(clientMessage);
 						break;
+					default:
+						AppConfig.timestampedErrorPrint("unknown message type: " + clientMessage.getMessageType());
+						break;
 				}
 				
 				threadPool.submit(messageHandler);

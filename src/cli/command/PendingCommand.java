@@ -20,7 +20,7 @@ public class PendingCommand implements CLICommand{
                 AppConfig.timestampedStandardPrint("No pending requests for: " + args);
         }catch (Exception e){
             //TODO exception i funkcija
-            AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("Invalid argument PENDING: " + args + ". Should be key, which is an int.");
         }
     }
 }

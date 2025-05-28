@@ -16,7 +16,7 @@ public class VisibilityCommand implements CLICommand{
                 AppConfig.timestampedStandardPrint("Files are already " + args);
         }catch (Exception e){
             //TODO sredi
-            AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("VISIBILITY" + args + ". Should be key, which is an int.");
         }
 
     }

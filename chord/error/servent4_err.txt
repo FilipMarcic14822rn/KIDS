@@ -1,2 +1,2 @@
-21:36:15 - Unknown command: dht_put
-21:36:19 - Unknown command: dht_get
+22:49:11 - VISIBILITYprivate. Should be key, which is an int.
+22:49:41 - Invalid ACCEPT: localhost:1100. Should be key, which is an int.

@@ -16,7 +16,7 @@ public class RemoveFileCommand implements CLICommand{
                 AppConfig.timestampedStandardPrint("File " + args + " not found.");
         }catch (Exception e){
             //TODO exception i funkcija
-            AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("Invalid REMOVE FILE: " + args + ". Should be key, which is an int.");
         }
     }
 }

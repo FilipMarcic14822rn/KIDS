@@ -1,7 +1,8 @@
-package cli.command;
+package cli.command.old;
 
 import app.AppConfig;
 import cli.CLIParser;
+import cli.command.CLICommand;
 import servent.SimpleServentListener;
 
 public class StopCommand implements CLICommand {

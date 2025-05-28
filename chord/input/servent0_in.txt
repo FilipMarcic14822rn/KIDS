@@ -1,9 +1,8 @@
 pause 50000
-dht_put 2 5
+follow localhost:1200
 pause 10000
-pause 10000
-pause 10000
-pause 10000
-pause 10000
-pause 10000
-pause 10000
+follow localhost:1600
+pause 30000
+visibility private
+list_files localhost:1600
+stop

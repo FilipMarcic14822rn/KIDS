@@ -16,7 +16,7 @@ public class AcceptCommand implements CLICommand{
                 AppConfig.timestampedStandardPrint("Follow request from user " + args + " not found");
         }catch (Exception e){
             //TODO exception
-            AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("Invalid ACCEPT: " + args + ". Should be key, which is an int.");
         }
     }
 }

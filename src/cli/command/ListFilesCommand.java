@@ -19,8 +19,8 @@ public class ListFilesCommand implements CLICommand {
 				AppConfig.timestampedStandardPrint("view_files execute  "+args + ": " + val);
 			else
 				AppConfig.timestampedStandardPrint("waiting...");
-		} catch (NumberFormatException e) {
-			AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+//		} catch (NumberFormatException e) {
+//			AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
 		} catch (Exception e) {
 			AppConfig.timestampedStandardPrint("Please wait...");
 		}

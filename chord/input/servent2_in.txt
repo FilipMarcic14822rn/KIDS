@@ -1,7 +1,9 @@
 pause 30000
 pause 10000
+list_files localhost:1100
 pause 10000
 pause 10000
 pause 10000
 pause 10000
 pause 10000
+stop

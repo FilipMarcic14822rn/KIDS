@@ -17,7 +17,7 @@ public class FollowCommand implements CLICommand{
                 AppConfig.timestampedStandardPrint("User " + args + " not found");
         }catch (Exception e){
             //TODO exception i funkcija
-            AppConfig.timestampedErrorPrint("Invalid argument for view_files: " + args + ". Should be key, which is an int.");
+            AppConfig.timestampedErrorPrint("Invalid FOLLOW: " + args + ". Should be key, which is an int.");
         }
     }
 }

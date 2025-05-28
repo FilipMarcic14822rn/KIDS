@@ -51,10 +51,6 @@ public class ServentMain {
 		Thread listenerThread = new Thread(simpleListener);
 		listenerThread.start();
 
-		CLIParser cliParser = new CLIParser(simpleListener);
-		Thread cliThread = new Thread(cliParser);
-		cliThread.start();
-
 		ServentInitializer serventInitializer = new ServentInitializer();
 		Thread initializerThread = new Thread(serventInitializer);
 		initializerThread.start();
@@ -66,5 +62,9 @@ public class ServentMain {
 		BackupCleaner backupCleaner = new BackupCleaner();
 		Thread cleanerThread = new Thread(backupCleaner);
 		cleanerThread.start();
+
+		CLIParser cliParser = new CLIParser(simpleListener);
+		Thread cliThread = new Thread(cliParser);
+		cliThread.start();
 	}
 }
