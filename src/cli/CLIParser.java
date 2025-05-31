@@ -1,10 +1,13 @@
 package cli;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import app.ActivityMonitor;
 import app.AppConfig;
+import app.BackupCleaner;
 import app.Cancellable;
 import cli.command.*;
 import cli.command.old.InfoCommand;
@@ -37,13 +40,13 @@ public class CLIParser implements Runnable, Cancellable {
 	
 	private final List<CLICommand> commandList;
 	
-	public CLIParser(SimpleServentListener listener) {
+	public CLIParser(SimpleServentListener listener, ActivityMonitor activityMonitor, BackupCleaner backupCleaner) {
 		this.commandList = new ArrayList<>();
 		
 		commandList.add(new InfoCommand());
 		commandList.add(new PauseCommand());
 		commandList.add(new SuccessorInfo());
-		commandList.add(new StopCommand(this, listener));
+		commandList.add(new StopCommand(this, listener, activityMonitor, backupCleaner));
 		commandList.add(new ListFilesCommand());
 		commandList.add(new UploadCommand());
 		commandList.add(new AcceptCommand());
@@ -75,8 +78,12 @@ public class CLIParser implements Runnable, Cancellable {
 			
 			for (CLICommand cliCommand : commandList) {
 				if (cliCommand.commandName().equals(commandName)) {
-					cliCommand.execute(commandArgs);
-					found = true;
+                    try {
+                        cliCommand.execute(commandArgs);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    found = true;
 					break;
 				}
 			}

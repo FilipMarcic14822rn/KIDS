@@ -52,11 +52,9 @@ public class ServentInitializer implements Runnable {
 			NewNodeMessage nnm = new NewNodeMessage(AppConfig.myServentInfo.getListenerPort(), someServentPort);
 			MessageUtil.sendMessage(nnm);
 
-			AppConfig.chordState.getBackupMap().put(AppConfig.myServentInfo.getChordId(), new HashMap<>());
-			AppConfig.chordState.getFollowerMap().put(AppConfig.myServentInfo.getChordId(), new ArrayList<>());
-			AppConfig.chordState.getPendingMap().put(AppConfig.myServentInfo.getChordId(), new ArrayList<>());
 			AppConfig.chordState.getValueMap().put(AppConfig.myServentInfo.getChordId(), new ArrayList<>());
 		}
+		AppConfig.timestampedStandardPrint(AppConfig.myServentInfo.getChordId()+"");
 	}
 
 }

@@ -4,6 +4,7 @@ import app.AppConfig;
 import servent.message.EmergencyMessage;
 import servent.message.Message;
 import servent.message.MessageType;
+import servent.message.WarningMessage;
 import servent.message.util.MessageUtil;
 
 public class WarningHandler implements MessageHandler{
@@ -14,13 +15,13 @@ public class WarningHandler implements MessageHandler{
     }
     @Override
     public void run() {
-        if (clientMessage.getMessageType() != MessageType.WARNING) {
-            //Send emergency to predecessor because unresponsiveness
-            EmergencyMessage emergencyMessage = new EmergencyMessage(AppConfig.myServentInfo.getListenerPort(),
-                    AppConfig.chordState.getPredecessor().getListenerPort(),
-                    clientMessage.getSenderIpAddress() + ":" + clientMessage.getSenderPort());
+        if (clientMessage.getMessageType() == MessageType.WARNING) {
+            //Send emergency to risky node because unresponsiveness
+            MessageUtil.sendMessage( new EmergencyMessage(AppConfig.myServentInfo.getListenerPort(),
+                    ((WarningMessage)clientMessage).getRiskyNode(),
+                    Integer.toString(clientMessage.getSenderPort())));
 
-            MessageUtil.sendMessage(emergencyMessage);
+            AppConfig.timestampedErrorPrint("Sending emergency to " + AppConfig.chordState.getPredecessor().getListenerPort());
         }else
             AppConfig.timestampedErrorPrint("Warning handler got a message that is not WARNING");
     }

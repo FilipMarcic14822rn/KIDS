@@ -17,7 +17,7 @@ public class PendingCommand implements CLICommand{
             if (requests != null)
                 AppConfig.timestampedStandardPrint("Pending follow requests:\n" + requests);
             else
-                AppConfig.timestampedStandardPrint("No pending requests for: " + args);
+                AppConfig.timestampedStandardPrint("No pending requests for: " + AppConfig.myServentInfo.getChordId());
         }catch (Exception e){
             //TODO exception i funkcija
             AppConfig.timestampedErrorPrint("Pending command exception: " + e.getMessage() + " for args: " + args);

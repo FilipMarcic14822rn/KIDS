@@ -1,9 +1,5 @@
 package app;
 
-import servent.message.PingMessage;
-import servent.message.WarningMessage;
-import servent.message.util.MessageUtil;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,5 +41,9 @@ public class BackupCleaner implements Runnable{
             try {Thread.sleep(600000);}
             catch (InterruptedException e) {throw new RuntimeException(e);}
         }
+    }
+
+    public void stop() {
+        this.working = false;
     }
 }

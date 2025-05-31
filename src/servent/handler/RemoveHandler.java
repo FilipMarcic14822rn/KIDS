@@ -13,8 +13,10 @@ public class RemoveHandler implements MessageHandler{
     }
     @Override
     public void run() {
-        if(clientMessage.getMessageType() == MessageType.REMOVE)
-            AppConfig.chordState.removeNode(((RemoveMessage)clientMessage).getNode());
+        if(clientMessage.getMessageType() == MessageType.REMOVE) {
+            AppConfig.timestampedStandardPrint("Asked to remove: " + ((RemoveMessage) clientMessage).getNode());
+            AppConfig.chordState.removeNode(((RemoveMessage) clientMessage).getNode());
+        }
         else
             AppConfig.timestampedErrorPrint("Remove handler got a message that is not REMOVE");
     }

@@ -102,6 +102,12 @@ public class SimpleServentListener implements Runnable, Cancellable {
 					case FOLLOW_REQUEST:
 						messageHandler = new FollowRequestHandler(clientMessage);
 						break;
+					case SK_REPLY:
+						messageHandler = new SKReplyHandler(clientMessage);
+						break;
+					case SK_REQUEST:
+						messageHandler = new SKRequestHandler(clientMessage);
+						break;
 					default:
 						AppConfig.timestampedErrorPrint("unknown message type: " + clientMessage.getMessageType());
 						break;

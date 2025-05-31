@@ -45,8 +45,10 @@ public class AppConfig {
 	public static boolean INITIALIZED = false;
 	public static int BOOTSTRAP_PORT;
 	public static int SERVENT_COUNT;
+	public static String ROOT_DIR;
 	
 	public static ChordState chordState;
+	public static SuzukiKasamiMutex mutex;
 	
 	/**
 	 * Reads a config file. Should be called once at start of app.
@@ -69,29 +71,43 @@ public class AppConfig {
 	 * @param configName name of configuration file
 	 * @param serventId id of the servent, as used in the configuration file
 	 */
-	public static void readConfig(String configName, int serventId){
+	public static void readConfig(String configName, int serventId) {
 		Properties properties = new Properties();
 		try {
 			properties.load(new FileInputStream(new File(configName)));
-			
+
 		} catch (IOException e) {
 			timestampedErrorPrint("Couldn't open properties file. Exiting...");
 			System.exit(0);
 		}
-		
+
 		try {
 			BOOTSTRAP_PORT = Integer.parseInt(properties.getProperty("bs.port"));
 		} catch (NumberFormatException e) {
 			timestampedErrorPrint("Problem reading bootstrap_port. Exiting...");
 			System.exit(0);
 		}
-		
+
 		try {
 			SERVENT_COUNT = Integer.parseInt(properties.getProperty("servent_count"));
 		} catch (NumberFormatException e) {
 			timestampedErrorPrint("Problem reading servent_count. Exiting...");
 			System.exit(0);
 		}
+
+		try {
+			ROOT_DIR = properties.getProperty("root");
+			File f = new File(ROOT_DIR);
+			if(!f.exists()) {
+				timestampedErrorPrint("Problem reading root directory " + f.getAbsolutePath());
+				System.exit(0);
+			}
+		} catch (Exception e){
+			timestampedErrorPrint("Problem reading root directory " + e.getMessage());
+			System.exit(0);
+		}
+
+
 		
 		try {
 			int chordSize = Integer.parseInt(properties.getProperty("chord_size"));
@@ -131,8 +147,9 @@ public class AppConfig {
 			timestampedErrorPrint("Problem reading hard_limit. Exiting...");
 			System.exit(0);
 		}
-		
+
 		myServentInfo = new ServentInfo("localhost", serventPort, softLimit, hardLimit);
+		mutex = new SuzukiKasamiMutex();
 	}
 	
 }

@@ -22,9 +22,9 @@ public class TellGetHandler implements MessageHandler {
 			List<ChordImage> images = ((TellGetMessage)clientMessage).getImages();
 			
 			if (images == null)
-				AppConfig.timestampedErrorPrint("Got TELL_GET message with null value");
+				AppConfig.timestampedStandardPrint("User " + clientMessage.getSenderPort() + " has no images currently");
 			else if(images.isEmpty())
-				AppConfig.timestampedStandardPrint("Images are private");
+				AppConfig.timestampedStandardPrint("User "+clientMessage.getSenderPort()+" images are private");
 			else
 				for (ChordImage img : images)
 					System.out.println(img.toString());

@@ -35,6 +35,8 @@ public class ServentInfo implements Serializable {
 		this.hardLimit = hardLimit;
 	}
 
+	public String getIpAndPort(){return ipAddress + ":" + listenerPort;}
+
 	public String getIpAddress() {
 		return ipAddress;
 	}

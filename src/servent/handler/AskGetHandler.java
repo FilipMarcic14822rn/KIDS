@@ -43,16 +43,22 @@ public class AskGetHandler implements MessageHandler {
 							value = valueMap.get(key);
 						}
 
+						AppConfig.timestampedStandardPrint("Sending files to: " + clientMessage.getSenderPort());
 						TellGetMessage tgm = new TellGetMessage(AppConfig.myServentInfo.getListenerPort(), clientMessage.getSenderPort(),
 								key, value);
 						MessageUtil.sendMessage(tgm);
 					}
 					else{
+						AppConfig.timestampedStandardPrint("Not a follower " + clientMessage.getSenderPort());
 						MessageUtil.sendMessage(new TellGetMessage(AppConfig.myServentInfo.getListenerPort(), clientMessage.getSenderPort(), key, new ArrayList<>()));
 					}
 				} else {
 					ServentInfo nextNode = AppConfig.chordState.getNextNodeForKey(key);
-					AskGetMessage agm = new AskGetMessage(clientMessage.getSenderPort(), nextNode.getListenerPort(), clientMessage.getMessageText());
+					if (AppConfig.chordState.isKeyMine(nextNode.getChordId()))
+						return;
+					AppConfig.timestampedStandardPrint("AskGet forwarding from " + clientMessage.getSenderPort() + " to " + nextNode.getListenerPort());
+					AskGetMessage agm = new AskGetMessage(clientMessage.getSenderPort(), nextNode.getListenerPort()==AppConfig.myServentInfo.getListenerPort()?AppConfig.chordState.getNextNodePort() : nextNode.getListenerPort(),
+							clientMessage.getMessageText());
 					MessageUtil.sendMessage(agm);
 				}
 			} catch (NumberFormatException e) {

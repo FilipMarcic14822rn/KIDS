@@ -15,6 +15,8 @@ public class PingHandler implements MessageHandler{
     @Override
     public void run() {
         if(clientMessage.getMessageType() == MessageType.PING){
+            if (AppConfig.myServentInfo.getChordId() == 57)
+                return;
             //Return pong or confirm activity of node
             if (clientMessage.getMessageText().equals("ping")){
                 PingMessage pong=new PingMessage(AppConfig.myServentInfo.getListenerPort(),
@@ -24,6 +26,9 @@ public class PingHandler implements MessageHandler{
             }
             else if (clientMessage.getMessageText().equals("pong")){
                 AppConfig.myServentInfo.setSuccessorActivityFlag(true);
+
+                AppConfig.timestampedStandardPrint("Setting activity to true for " +
+                        AppConfig.chordState.getSuccessorTable()[0].getListenerPort());
             }
         }else {
             AppConfig.timestampedErrorPrint("Ping handler got a message that is not PING");

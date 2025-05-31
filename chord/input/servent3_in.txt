@@ -4,5 +4,10 @@ pause 10000
 pause 10000
 pause 10000
 pause 10000
+pause 60000
+pause 60000
+pause 60000
+pending
+pause 60000
 pending
 stop

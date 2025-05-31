@@ -1,7 +1,25 @@
 pause 10000
+upload screenshot.png
+pause 5000
 visibility private
-pause 20000
-pending
 pause 10000
 accept localhost:1100
+pause 50000
+pending
+pause 10000
+pause 10000
+pause 10000
+pause 10000
+pending
+remove_file screenshot.png
+pause 40000
+pending
+pause 40000
+pending
+pause 5000
+pending
+pause 5000
+pending
+list_files localhost:1600
+pause 15000
 stop

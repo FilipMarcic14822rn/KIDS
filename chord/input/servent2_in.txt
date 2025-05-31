@@ -2,9 +2,15 @@ pause 30000
 pause 10000
 list_files localhost:1100
 pause 10000
+upload screenshot.png
+remove_file screenshot.png
 pause 10000
+pending
 pause 10000
+pending
 pause 10000
-pause 10000
+list_files localhost:1600
+pause 50000
+pause 50000
 pending
 stop

@@ -16,11 +16,16 @@ public class DefuseHandler implements MessageHandler{
     public void run() {
         //Check if defuse is meant for me or forward to ping origin
         if (clientMessage.getMessageType() == MessageType.DEFUSE)
-            if (clientMessage.getMessageText().equals(AppConfig.myServentInfo.getIpAddress() + ":" + AppConfig.myServentInfo.getListenerPort()))
+            if (clientMessage.getMessageText().equals(Integer.toString(AppConfig.myServentInfo.getListenerPort()))) {
                 AppConfig.myServentInfo.setSuccessorActivityFlag(true);
-            else
-                MessageUtil.sendMessage(new DefuseMessage(AppConfig.myServentInfo.getListenerPort(),
-                        Integer.parseInt(clientMessage.getMessageText().split(":")[1]),clientMessage.getMessageText()));
+                AppConfig.timestampedStandardPrint("Defusing for node " + clientMessage.getSenderPort());
+            }
+            else {
+                AppConfig.timestampedStandardPrint("Defuse forwarding activity of " + clientMessage.getSenderPort() + " to " +
+                        clientMessage.getMessageText());
+                MessageUtil.sendMessage(new DefuseMessage(AppConfig.chordState.getPredecessor().getListenerPort(),
+                        Integer.parseInt(clientMessage.getMessageText()), clientMessage.getMessageText()));
+            }
         else
             AppConfig.timestampedErrorPrint("Defuse handler got a message that is not DEFUSE");
     }

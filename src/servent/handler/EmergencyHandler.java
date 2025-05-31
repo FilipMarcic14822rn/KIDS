@@ -18,11 +18,15 @@ public class EmergencyHandler implements MessageHandler {
         //Send ping to origin to confirm activity if communication is possible
         //and send defuse to successor to intervene with origin if communication is impossible
         if (clientMessage.getMessageType() == MessageType.EMERGENCY){
-            MessageUtil.sendMessage(new PingMessage(AppConfig.myServentInfo.getListenerPort(),
-                    Integer.parseInt(clientMessage.getMessageText().split(":")[1]), "pong"));
+            if (!(AppConfig.myServentInfo.getChordId() == 57))
+                MessageUtil.sendMessage(new PingMessage(AppConfig.myServentInfo.getListenerPort(),
+                        Integer.parseInt(clientMessage.getMessageText()), "pong"));
 
             MessageUtil.sendMessage(new DefuseMessage(AppConfig.myServentInfo.getListenerPort(),
                     clientMessage.getSenderPort(), clientMessage.getMessageText()));
+
+            AppConfig.timestampedStandardPrint("Emergency Message Received from " + clientMessage.getSenderPort() +
+                    " because node " + clientMessage.getMessageText() + " couldn't reach me");
         }else
             AppConfig.timestampedErrorPrint("Emergency handler got a message that is not EMERGENCY");
     }

@@ -40,7 +40,7 @@ public class BackupHandler implements MessageHandler {
                         put(chordHash(clientMessage.getSenderIpAddress() + ":" + clientMessage.getSenderPort()),
                                 new ArrayList<>(((BackupMessage) clientMessage).getImages()));
             }
-
+        AppConfig.timestampedStandardPrint("Added backup " + ((BackupMessage) clientMessage).getImages() + " for " + clientMessage.getSenderPort() + " on " + AppConfig.myServentInfo.getListenerPort());
         }else
             AppConfig.timestampedStandardPrint("Backup handler got a message that is not BACKUP");
     }

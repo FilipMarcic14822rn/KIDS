@@ -1,5 +1,7 @@
 package cli.command;
 
+import java.io.IOException;
+
 /**
  * Defines a command on CLI. Each command has a name
  * and an execute, which takes and parses all the args.
@@ -16,5 +18,5 @@ public interface CLICommand {
 	/**
 	 * All command logic goes here. <code>args</code> is the user's input, with command name taken out.
 	 */
-	void execute(String args);
+	void execute(String args) throws IOException;
 }

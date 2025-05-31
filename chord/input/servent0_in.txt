@@ -1,8 +1,23 @@
 pause 50000
-follow localhost:1200
-pause 10000
 follow localhost:1600
+pause 10000
+follow localhost:1200
 pause 30000
-visibility private
 list_files localhost:1600
+pause 5000
+pending
+pause 10000
+list_files localhost:1300
+visibility private
+pause 15000
+pending
+pause 10000
+list_files localhost:1600
+pause 10000
+pending
+pause 40000
+pending
+pause 40000
+pending
+pause 40000
 stop

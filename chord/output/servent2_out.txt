@@ -1,66 +1,185 @@
-01:02:44 - Starting servent [62|localhost|1300]
-01:02:44 - Backups cleaned
-01:02:45 - Sending message [62|1300|0||NEW_NODE|1200|17]
-01:02:46 - Got message [17|1200|4||WELCOME|1300|62]
-01:02:47 - Sending message [62|1300|1|ping|PING|1200|17]
-01:02:47 - Sending message [62|1300|2||UPDATE|1200|17]
-01:02:48 - Got message [17|1200|6|pong|PING|1300|62]
-01:02:49 - Got message [62|1300|6|1200,1100|UPDATE|1300|62]
-01:02:54 - Got message [57|1400|0||NEW_NODE|1300|62]
-01:02:55 - Sending message [62|1300|3||WELCOME|1400|57]
-01:02:56 - Got message [57|1400|1|ping|PING|1300|62]
-01:02:56 - Got message [57|1400|2||UPDATE|1300|62]
-01:02:56 - Sending message [62|1300|4|pong|PING|1400|57]
-01:02:57 - Sending message [62|1300|6|ping|PING|1200|17]
-01:02:57 - Sending message [57|1400|5|1300|UPDATE|1200|17]
-01:02:58 - Got message [35|1100|8|ping|PING|1300|62]
-01:02:58 - Got message [17|1200|10|pong|PING|1300|62]
-01:02:59 - Sending message [62|1300|7|pong|PING|1100|35]
-01:03:05 - Got message [9|1600|0||NEW_NODE|1300|62]
-01:03:06 - Sending message [9|1600|8||NEW_NODE|1200|17]
-01:03:06 - Got message [57|1400|3|ping|PING|1300|62]
-01:03:07 - Sending message [62|1300|9|ping|PING|1200|17]
-01:03:07 - Sending message [62|1300|10|pong|PING|1400|57]
-01:03:08 - Got message [17|1200|14|pong|PING|1300|62]
-01:03:12 - Got message [9|1600|5|1200,1100,1400|UPDATE|1300|62]
-01:03:13 - Sending message [9|1600|11|1200,1100,1400,1300|UPDATE|1600|9]
-01:03:16 - Got message [57|1400|6|ping|PING|1300|62]
-01:03:17 - Got message [57|1400|7||FOLLOW_REQUEST|1300|62]
-01:03:17 - Sending message [62|1300|12|pong|PING|1400|57]
-01:03:17 - Sending message [62|1300|13|ping|PING|1600|9]
-01:03:17 - Sending message [62|1300|14||FOLLOW_REQUEST|1600|9]
-01:03:18 - Got message [9|1600|3|pong|PING|1300|62]
-01:03:25 - Sending message [62|1300|15|35|ASK_GET|1200|17]
-01:03:26 - Got message [57|1400|9|ping|PING|1300|62]
-01:03:26 - Got message [57|1400|10||FOLLOW_REQUEST|1300|62]
-01:03:27 - Sending message [62|1300|18|ping|PING|1600|9]
-01:03:27 - Sending message [62|1300|16|pong|PING|1400|57]
-01:03:27 - Sending message [62|1300|17||FOLLOW_REQUEST|1600|9]
-01:03:27 - Got message [9|1600|6|pong|PING|1300|62]
-01:03:27 - Got message [35|1100|17|35:null|TELL_GET|1300|62]
-01:03:36 - Got message [57|1400|12|ping|PING|1300|62]
-01:03:37 - Sending message [62|1300|20|pong|PING|1400|57]
-01:03:37 - Sending message [62|1300|19|ping|PING|1600|9]
-01:03:38 - Got message [9|1600|9|pong|PING|1300|62]
-01:03:46 - Got message [57|1400|14|ping|PING|1300|62]
-01:03:47 - Sending message [62|1300|21|ping|PING|1600|9]
-01:03:47 - Sending message [62|1300|22|pong|PING|1400|57]
-01:03:56 - Got message [35|1100|17|9|ASK_GET|1300|62]
-01:03:56 - Got message [57|1400|16|ping|PING|1300|62]
-01:03:57 - Sending message [62|1300|23||WARNING|1600|9]
-01:03:57 - Sending message [35|1100|24|9|ASK_GET|1600|9]
-01:03:58 - Sending message [62|1300|25|pong|PING|1400|57]
-01:04:06 - Got message [57|1400|19|ping|PING|1300|62]
-01:04:07 - Sending message [62|1300|26|pong|PING|1400|57]
-01:04:14 - Pending follow requests:
-[]
-01:04:14 - Stopping...
-01:04:57 - Sending message [62|1300|27||REMOVE|1200|17]
-01:04:57 - Sending message [62|1300|28|ping|PING|1200|17]
-01:05:07 - Sending message [62|1300|29||WARNING|1200|17]
-01:06:07 - Sending message [62|1300|31|ping|PING|1100|35]
-01:06:07 - Sending message [62|1300|30||REMOVE|1100|35]
-01:06:17 - Sending message [62|1300|32||WARNING|1100|35]
-01:07:17 - Sending message [62|1300|33||REMOVE|1400|57]
-01:07:17 - Sending message [62|1300|34|ping|PING|1400|57]
-01:07:27 - Sending message [62|1300|35||WARNING|1400|57]
+17:06:35 - Starting servent [62|localhost|1300]
+17:06:35 - Backups cleaned
+17:06:35 - 62
+17:06:36 - Sending message [62|1300|0||NEW_NODE|1100|35]
+17:06:39 - Got message [17|1200|5||WELCOME|1300|62]
+17:06:40 - Sending message [62|1300|2||UPDATE|1200|17]
+17:06:40 - Sending message [62|1300|1|ping|PING|1200|17]
+17:06:41 - Got message [17|1200|7|pong|PING|1300|62]
+17:06:41 - Setting activity to true for 1200
+17:06:42 - Got message [62|1300|7|1200,1100|UPDATE|1300|62]
+17:06:42 - Updated nodes: [[17|localhost|1200], [35|localhost|1100]]
+17:06:42 - Requesting token
+17:06:42 - Propagate token request
+17:06:42 - Token received
+17:06:42 - Q when starting[]
+17:06:42 - Q after for loop []
+17:06:42 - Released critical section and hasToken: false
+17:06:43 - Sending message [62|1300|3||SK_REQUEST|1200|17]
+17:06:45 - Got message [35|1100|8||SK_REPLY|1300|62]
+17:06:45 - Using token
+17:06:48 - Got message [57|1400|9||NEW_NODE|1300|62]
+17:06:49 - Sending message [62|1300|4||WELCOME|1400|57]
+17:06:49 - Got message [35|1100|10|ping|PING|1300|62]
+17:06:50 - Got message [57|1400|1|ping|PING|1300|62]
+17:06:50 - Sending message [62|1300|5|pong|PING|1100|35]
+17:06:50 - Got message [57|1400|2||UPDATE|1300|62]
+17:06:50 - Updated nodes: [[17|localhost|1200], [35|localhost|1100], [57|localhost|1400]]
+17:06:50 - Requesting token
+17:06:50 - Token received
+17:06:50 - Q when starting[]
+17:06:50 - Q after for loop []
+17:06:50 - Released critical section and hasToken: true
+17:06:51 - Sending message [62|1300|6|pong|PING|1400|57]
+17:06:51 - Sending message [57|1400|7|1300|UPDATE|1200|17]
+17:06:52 - Got message [17|1200|12||SK_REQUEST|1300|62]
+17:06:52 - localhost:1300 sending token to:[17|localhost|1200]
+17:06:52 - Got message [35|1100|12||SK_REQUEST|1300|62]
+17:06:53 - Sending message [62|1300|8||SK_REPLY|1200|17]
+17:06:54 - Got message [57|1400|3||SK_REQUEST|1300|62]
+17:06:55 - Sending message [62|1300|9||SK_REQUEST|1200|17]
+17:06:55 - Sending message [62|1300|10||SK_REQUEST|1100|35]
+17:06:56 - Got message [35|1100|17|1400|EMERGENCY|1300|62]
+17:06:56 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:06:57 - Sending message [62|1300|12|1400|DEFUSE|1100|35]
+17:06:57 - Sending message [62|1300|11|pong|PING|1400|57]
+17:06:59 - Activity confirmed for 1200
+17:07:00 - Sending message [62|1300|13|ping|PING|1200|17]
+17:07:01 - Got message [17|1200|20|pong|PING|1300|62]
+17:07:01 - Setting activity to true for 1200
+17:07:01 - Got message [57|1400|8||SK_REQUEST|1300|62]
+17:07:01 - Got message [57|1400|5||SK_REPLY|1300|62]
+17:07:01 - Propagating token to 17  1200
+17:07:02 - Got message [57|1400|6||SK_REQUEST|1300|62]
+17:07:02 - Got message [9|1600|11|1200,1100,1400|UPDATE|1300|62]
+17:07:02 - Updated nodes: [[9|localhost|1600], [17|localhost|1200], [35|localhost|1100], [57|localhost|1400]]
+17:07:02 - Requesting token
+17:07:02 - Propagate token request
+17:07:02 - Token received
+17:07:02 - Q when starting[]
+17:07:02 - Q after for loop [17, 35, 57]
+17:07:02 - Released critical section and hasToken: false
+17:07:03 - Sending message [57|1400|14||SK_REPLY|1200|17]
+17:07:03 - Sending message [62|1300|16||SK_REQUEST|1100|35]
+17:07:03 - Sending message [62|1300|15||SK_REQUEST|1200|17]
+17:07:03 - Sending message [9|1600|17|1200,1100,1400,1300|UPDATE|1600|9]
+17:07:06 - Got message [17|1200|13||SK_REPLY|1300|62]
+17:07:06 - Using token
+17:07:06 - Got message [9|1600|5||BACKUP|1300|62]
+17:07:06 - Added backup [SerializableImage{imageName='screenshot.png', imageFormat='png', imageSize=13186 bytes, timestamp=1748704025884}] for 1600 on 1300
+17:07:07 - Got message [57|1400|14||SK_REQUEST|1300|62]
+17:07:07 - localhost:1300 sending token to:[9|localhost|1600]
+17:07:08 - Got message [57|1400|15||FOLLOW_REQUEST|1300|62]
+17:07:08 - Sending message [62|1300|18||SK_REPLY|1600|9]
+17:07:09 - Sending message [62|1300|19||FOLLOW_REQUEST|1600|9]
+17:07:10 - Got message [57|1400|16|ping|PING|1300|62]
+17:07:11 - Sending message [62|1300|20|pong|PING|1400|57]
+17:07:16 - Got message [35|1100|27|1400|EMERGENCY|1300|62]
+17:07:16 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:07:17 - Sending message [62|1300|21|35|ASK_GET|1200|17]
+17:07:17 - Got message [57|1400|19||FOLLOW_REQUEST|1300|62]
+17:07:17 - Sending message [62|1300|22|pong|PING|1400|57]
+17:07:17 - Sending message [62|1300|24||FOLLOW_REQUEST|1600|9]
+17:07:17 - Sending message [62|1300|23|1400|DEFUSE|1100|35]
+17:07:18 - Got message [35|1100|30|35:null|TELL_GET|1300|62]
+17:07:18 - User 1100 has no images currently
+17:07:19 - Activity confirmed for 1200
+17:07:20 - Sending message [62|1300|25|ping|PING|1600|9]
+17:07:21 - Got message [9|1600|8|pong|PING|1300|62]
+17:07:21 - Setting activity to true for 1600
+17:07:25 - Successfully uploaded screenshot.png
+17:07:25 - Removing file screenshot.png
+17:07:25 - File screenshot.png was removed.
+17:07:26 - Sending message [62|1300|26||BACKUP|1600|9]
+17:07:26 - Sending message [62|1300|27||BACKUP|1400|57]
+17:07:26 - Sending message [62|1300|29||BACKUP|1400|57]
+17:07:26 - Sending message [62|1300|28||BACKUP|1600|9]
+17:07:30 - Got message [57|1400|20|ping|PING|1300|62]
+17:07:31 - Sending message [62|1300|30|pong|PING|1400|57]
+17:07:35 - No pending requests for: 62
+17:07:36 - Got message [35|1100|34|1400|EMERGENCY|1300|62]
+17:07:36 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:07:37 - Sending message [62|1300|32|1400|DEFUSE|1100|35]
+17:07:37 - Sending message [62|1300|31|pong|PING|1400|57]
+17:07:39 - Activity confirmed for 1600
+17:07:40 - Sending message [62|1300|33|ping|PING|1600|9]
+17:07:41 - Got message [9|1600|10|pong|PING|1300|62]
+17:07:41 - Setting activity to true for 1600
+17:07:45 - Got message [9|1600|11||WARNING|1300|62]
+17:07:45 - No pending requests for: 62
+17:07:46 - Sending message [62|1300|34|1600|EMERGENCY|1200|17]
+17:07:48 - Got message [35|1100|23|9|ASK_GET|1300|62]
+17:07:48 - AskGet forwarding from 1100 to 1600
+17:07:49 - Sending message [35|1100|35|9|ASK_GET|1600|9]
+17:07:50 - Got message [57|1400|25||SK_REQUEST|1300|62]
+17:07:50 - Got message [57|1400|24|ping|PING|1300|62]
+17:07:51 - Sending message [62|1300|36||SK_REQUEST|1200|17]
+17:07:52 - Sending message [62|1300|37|pong|PING|1400|57]
+17:07:56 - Got message [35|1100|38|1400|EMERGENCY|1300|62]
+17:07:56 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:07:57 - Sending message [62|1300|40|1400|DEFUSE|1100|35]
+17:07:57 - Sending message [62|1300|38|9|ASK_GET|1600|9]
+17:07:57 - Sending message [62|1300|39|pong|PING|1400|57]
+17:07:58 - Got message [9|1600|14|9:[]|TELL_GET|1300|62]
+17:07:58 - User 1600 has no images currently
+17:07:59 - Activity confirmed for 1600
+17:08:00 - Sending message [62|1300|41|ping|PING|1600|9]
+17:08:00 - Got message [57|1400|28||SK_REQUEST|1300|62]
+17:08:01 - Got message [9|1600|20|pong|PING|1300|62]
+17:08:01 - Setting activity to true for 1600
+17:08:02 - Got message [35|1100|29|62|ASK_GET|1300|62]
+17:08:02 - Sending files to: 1100
+17:08:03 - Sending message [62|1300|42|62:[]|TELL_GET|1100|35]
+17:08:09 - Got message [57|1400|30|ping|PING|1300|62]
+17:08:11 - Sending message [62|1300|43|pong|PING|1400|57]
+17:08:16 - Got message [35|1100|42|1400|EMERGENCY|1300|62]
+17:08:16 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:08:16 - Sending message [62|1300|45|1400|DEFUSE|1100|35]
+17:08:17 - Sending message [62|1300|44|pong|PING|1400|57]
+17:08:19 - Activity confirmed for 1600
+17:08:20 - Sending message [62|1300|46|ping|PING|1600|9]
+17:08:21 - Got message [9|1600|22|pong|PING|1300|62]
+17:08:21 - Setting activity to true for 1600
+17:08:28 - Got message [35|1100|32|9|ASK_GET|1300|62]
+17:08:28 - AskGet forwarding from 1100 to 1600
+17:08:29 - Sending message [35|1100|47|9|ASK_GET|1600|9]
+17:08:30 - Got message [57|1400|33|ping|PING|1300|62]
+17:08:32 - Sending message [62|1300|48|pong|PING|1400|57]
+17:08:36 - Got message [35|1100|46|1400|EMERGENCY|1300|62]
+17:08:36 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:08:37 - Sending message [62|1300|50|1400|DEFUSE|1100|35]
+17:08:37 - Sending message [62|1300|49|pong|PING|1400|57]
+17:08:39 - Activity confirmed for 1600
+17:08:39 - Sending message [62|1300|51|ping|PING|1600|9]
+17:08:40 - Got message [9|1600|25|pong|PING|1300|62]
+17:08:40 - Setting activity to true for 1600
+17:08:50 - Got message [57|1400|35|ping|PING|1300|62]
+17:08:51 - Sending message [62|1300|52|pong|PING|1400|57]
+17:08:52 - Got message [9|1600|27||BACKUP|1300|62]
+17:08:52 - Added backup [] for 1600 on 1300
+17:08:56 - Got message [35|1100|49|1400|EMERGENCY|1300|62]
+17:08:56 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:08:57 - Sending message [62|1300|53|pong|PING|1400|57]
+17:08:57 - Sending message [62|1300|54|1400|DEFUSE|1100|35]
+17:08:59 - Activity confirmed for 1600
+17:09:00 - Sending message [62|1300|55|ping|PING|1600|9]
+17:09:01 - Got message [9|1600|29|pong|PING|1300|62]
+17:09:01 - Setting activity to true for 1600
+17:09:10 - Got message [57|1400|37|ping|PING|1300|62]
+17:09:12 - Sending message [62|1300|56|pong|PING|1400|57]
+17:09:16 - Got message [35|1100|52|1400|EMERGENCY|1300|62]
+17:09:16 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:09:17 - Sending message [62|1300|58|1400|DEFUSE|1100|35]
+17:09:17 - Sending message [62|1300|57|pong|PING|1400|57]
+17:09:19 - Activity confirmed for 1600
+17:09:20 - Sending message [62|1300|59|ping|PING|1600|9]
+17:09:21 - Got message [9|1600|31|pong|PING|1300|62]
+17:09:21 - Setting activity to true for 1600
+17:09:30 - Got message [57|1400|39|ping|PING|1300|62]
+17:09:31 - Sending message [62|1300|60|pong|PING|1400|57]
+17:09:35 - Got message [35|1100|55|1400|EMERGENCY|1300|62]
+17:09:35 - Emergency Message Received from 1100 because node 1400 couldn't reach me
+17:09:35 - No pending requests for: 62
+17:09:35 - Stopping...
+17:09:36 - Sending message [62|1300|61|pong|PING|1400|57]
+17:09:36 - Sending message [62|1300|62|1400|DEFUSE|1100|35]
